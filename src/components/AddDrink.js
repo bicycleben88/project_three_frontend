@@ -1,30 +1,64 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function AddDrink() {
-    return (
-      <div className="App">
-        <h2>Add a Drink in the form below</h2>
+  const [fields, setFields] = useState([{ value: null }]);
 
-{/* onSubmit={handleSubmit} */}
-        <form>
-          <label htmlFor="name"></label>
-          <input
-            type="text"
-            id="drink"
-            name="name"
-            // onChange={handleChange}
-            // value={state.name}
-            placeholder="Drink Name"
-          />
-          <select Value="Alcoholic?">
-            <option value= "Yes">Yes</option>
-            <option value= "No"> No</option>
-          </select>
-          <input type="submit" value="Add Beverage" />
-        </form>
-
-      </div>
-    );
+  function handleChange(i, event) {
+    const values = [...fields];
+    values[i].value = event.target.value;
+    setFields(values);
   }
 
-export default AddDrink
+  function handleAdd() {
+    const values = [...fields];
+    values.push({ value: null });
+    setFields(values);
+  }
+
+  function handleRemove(i) {
+    const values = [...fields];
+    values.splice(i, 1);
+    setFields(values);
+  }
+
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+
+      <form>
+        <input type="text" placeholder="Drink Name" />
+      </form>
+
+      <button type="button" onClick={() => handleAdd()}>
+        Add Ingredient
+      </button>
+
+      {fields.map((field, idx) => {
+        return (
+          <div key={`${field}-${idx}`}>
+            <input
+              type="text"
+              placeholder="Ingredient"
+              value={field.value || ""}
+              onChange={(e) => handleChange(idx, e)}
+            />
+            <button type="button" onClick={() => handleRemove(idx)}>
+              X
+            </button>
+          </div>
+        );
+      })}
+
+      <form>
+        <textarea placeholder="Instructions" />
+      </form>
+
+      <button type="button">Submit Creation</button>
+      
+    </div>
+  );
+}
+
+//   Inspired by: https://codesandbox.io/s/q555kp8jj?fontsize=14&file=/src/index.js:119-1141
+
+export default AddDrink;
