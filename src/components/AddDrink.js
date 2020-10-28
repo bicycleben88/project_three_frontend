@@ -21,6 +21,8 @@ function AddDrink() {
     setFields(values);
   }
 
+  //function handleSubmit(){}
+
   return (
     <div className="App">
 
@@ -36,7 +38,7 @@ function AddDrink() {
 
       {fields.map((field, idx) => {
         return (
-            
+
           <div key={`${field}-${idx}`}>
             <input
               type="text"
@@ -58,6 +60,7 @@ function AddDrink() {
       </form>
 
       <button type="button">Submit Creation</button>
+      {/* add handle submit to button */}
 
     </div>
   );
