@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
 
 function AddDrink() {
   const [fields, setFields] = useState([{ value: null }]);
@@ -31,9 +32,7 @@ function AddDrink() {
         <input type="text" placeholder="Drink Name" />
       </form>
       <br/>
-      <button type="button" onClick={() => handleAdd()}>
-        Add Ingredient
-      </button>
+      <Button variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
       <br />
       {fields.map((field, idx) => {
         return (
@@ -44,10 +43,9 @@ function AddDrink() {
               value={field.value || ""}
               onChange={(e) => handleChange(idx, e)}
             />
-            
-            <button id="delete" type="button" onClick={() => handleRemove(idx)}>
-              X
-            </button>
+
+            <Button variant="dark" id="delete" onClick={() => handleRemove(idx)}>X</Button>{' '}
+
           </div>
         );
       })}
@@ -56,7 +54,7 @@ function AddDrink() {
         <textarea placeholder="Instructions" />
       </form>
 
-      <button type="button">Submit Creation</button>
+      <Button variant="dark">Submit Creation</Button>{' '}
       {/* add handle submit to button */}
     </div>
   );
