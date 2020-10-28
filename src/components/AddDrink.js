@@ -23,7 +23,8 @@ function AddDrink() {
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+
+      <h2>Mix a Drink Below!</h2>
 
       <form>
         <input type="text" placeholder="Drink Name" />
@@ -35,6 +36,7 @@ function AddDrink() {
 
       {fields.map((field, idx) => {
         return (
+            
           <div key={`${field}-${idx}`}>
             <input
               type="text"
@@ -42,9 +44,11 @@ function AddDrink() {
               value={field.value || ""}
               onChange={(e) => handleChange(idx, e)}
             />
+
             <button type="button" onClick={() => handleRemove(idx)}>
               X
             </button>
+
           </div>
         );
       })}
@@ -54,7 +58,7 @@ function AddDrink() {
       </form>
 
       <button type="button">Submit Creation</button>
-      
+
     </div>
   );
 }
