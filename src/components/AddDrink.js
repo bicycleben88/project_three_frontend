@@ -62,6 +62,5 @@ function AddDrink() {
   );
 }
 
-//   Inspired by: https://codesandbox.io/s/q555kp8jj?fontsize=14&file=/src/index.js:119-1141
 
 export default AddDrink;
