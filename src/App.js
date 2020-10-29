@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Navigation from './components/Navbar';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './pages/Login';
 
 //send Global Context to all components
 export const GlobalContext = React.createContext(null)
@@ -44,6 +45,7 @@ function App() {
           <AddDrink {...rProps}/>
         </>}} />
         <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
+        <Route exact path="/login" render={(rProps => <Login {...rProps} />)} />
       </Switch>
       </main>
     </div>
