@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
-// import Input from 'react-bootstrap/Input'
 import InputGroup from 'react-bootstrap/InputGroup'
 
 
@@ -31,20 +30,20 @@ function AddDrink() {
   return (
     <div className="App">
       <h2>Mix a Drink Below!</h2>
-      <br/>
+      
       <InputGroup className="txtarea" >
-              <Form.Control
-                type="text"
-                placeholder="Drink Name" >
-              </Form.Control>
-            </InputGroup>
-      <br/>
-      <Button variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
+        <Form.Control
+          type="text"
+          placeholder="Drink Name" >
+        </Form.Control>
+      </InputGroup>
+
+      <Button className="headspace" variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
       <br />
       {fields.map((field, idx) => {
         return (
           <div key={`${field}-${idx}`}>
-            <InputGroup className="txtarea" >
+            <InputGroup className="txtarea headspace" >
               <Form.Control
                 type="text"
                 placeholder="Ingredient"
@@ -55,20 +54,18 @@ function AddDrink() {
               <InputGroup.Append>
                 <Button variant="dark" id="delete" onClick={() => handleRemove(idx)}>X</Button>{' '}
               </InputGroup.Append>
-
             </InputGroup>
           </div>
         );
       })}
-<br/>
-      <Form.Control className="txtarea" placeholder="Instructions" as="textarea" rows={3} />
-      <br/>
-      <Button variant="dark">Submit Creation</Button>{' '}
-      {/* add handle submit to button */}
 
+      <Form.Control className="txtarea headspace" placeholder="Instructions" as="textarea" rows={3} />
+      
+      <Button className="headspace" variant="dark">Submit Creation</Button>{' '}
+      {/* add handle submit to button */}
+      
     </div>
   );
 }
-
 
 export default AddDrink;

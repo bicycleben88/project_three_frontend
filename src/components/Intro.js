@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 function Intro() {
 
 return(
-    <Jumbotron fluid>
+    <Jumbotron>
         <Container>
         <h1>Welcome to Cocktail Hour!</h1>
         <h5> 
