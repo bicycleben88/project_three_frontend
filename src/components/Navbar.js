@@ -7,7 +7,7 @@ function Navigation(){
         <Navbar id="stucktop" bg="dark" variant="dark">
             <Navbar.Brand href="#home">Cocktail Hour</Navbar.Brand>
             <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#login">SignUp / Login</Nav.Link>
             <Nav.Link href="#features">Cocktails</Nav.Link>
             <Nav.Link href="#pricing">About</Nav.Link>
             </Nav>

@@ -15,6 +15,7 @@ code {
 #stucktop{
   position: fixed;
   width: 100%;
+  z-index: 3;
 }
 
 button{
@@ -35,5 +36,9 @@ button{
 
 .headspace{
   margin-top: 10px;
+}
+
+.jumbotron{
+  padding-bottom: 1rem !important;
 }
 
