@@ -62,32 +62,28 @@ const Signup = (props) => {
         </Jumbotron>
         <InputGroup className="txtarea" onSubmit={handleSubmit}>
             <form onSubmit={handleSubmit}>
-
-            
-            <Form.Control
-            type="text"
-            name="username"
-            value={form.username}
-            onChange={handleChange}
-            placeholder="Create Username" 
-            style={{width: '155px'}}>
-            </Form.Control>
-            <Form.Control
-            type="password"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            placeholder="Create Password" 
-            style={{width: '155px'}}>
-            </Form.Control>
-            <Form.Control
-            type="submit"
-            
-            value="Sign Up" 
-            style={{width: '55px'}}>
-            </Form.Control>
-        </form>
-           
+                <Form.Control
+                    type="text"
+                    name="username"
+                    value={form.username}
+                    onChange={handleChange}
+                    placeholder="Create Username" 
+                    style={{width: '155px'}}>
+                </Form.Control>
+                <Form.Control
+                    type="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    placeholder="Create Password" 
+                    style={{width: '155px'}}>
+                </Form.Control>
+                <Form.Control
+                    type="submit"
+                    value="Sign Up" 
+                    style={{width: '55px'}}>
+                </Form.Control>
+            </form>
         </InputGroup>
         </>
     )
