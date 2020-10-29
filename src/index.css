@@ -15,11 +15,15 @@ h1 {
   font-size: 70px;
 }
 
-.mixheading{
-  text-decoration: underline;
-  text-transform: none;
-  font-family: Mali, cursive;
-  font-size: 50px;
+#stucktop{
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+button{
+  width: 200px;
+  padding: 10px;
 }
 
 textarea,
@@ -44,6 +48,21 @@ button {
   border-radius: 5px;
   padding: 6px;
   font-weight: bold;
+}
+
+
+.txtarea{
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headspace{
+  margin-top: 10px;
+}
+
+.jumbotron{
+  padding-bottom: 1rem !important;
 }
 
 /* Responsive when website is 500px and smaller */
