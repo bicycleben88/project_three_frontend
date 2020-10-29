@@ -14,7 +14,7 @@ function App() {
   //Create global state for all components
   const [globalState, setGlobalState] = React.useState({
     //API URL
-    url: "https://project-three-api.herokuapp.com/",
+    url: "https://project-three-api.herokuapp.com",
     //JWT token
     token: null
   });
