@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+#stucktop{
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
 button{
   width: 200px;
   padding: 10px;
@@ -20,5 +26,19 @@ button{
 #delete{
   width: 20px;
   padding: 1px;
+}
+
+.txtarea{
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headspace{
+  margin-top: 10px;
+}
+
+.jumbotron{
+  padding-bottom: 1rem !important;
 }
 
