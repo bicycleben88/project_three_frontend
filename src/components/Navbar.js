@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 
 function Navigation(){
     return(
-        <Navbar bg="dark" variant="dark">
+        <Navbar id="stucktop" bg="dark" variant="dark">
             <Navbar.Brand href="#home">Cocktail Hour</Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>

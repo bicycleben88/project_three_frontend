@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+#stucktop{
+  position: fixed;
+  width: 100%;
+}
+
 button{
   width: 200px;
   padding: 10px;
