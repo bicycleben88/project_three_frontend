@@ -1,15 +1,17 @@
 import React from "react"
 import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
+import Nav from 'react-bootstrap/Nav';
+
+import { Link } from 'react-router-dom';
 
 function Navigation(){
     return(
         <Navbar id="stucktop" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Cocktail Hour</Navbar.Brand>
+            <Navbar.Brand href="/">Cocktail Hour</Navbar.Brand>
             <Nav className="mr-auto">
-            <Nav.Link href="#login">SignUp / Login</Nav.Link>
-            <Nav.Link href="#features">Cocktails</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
+            <Nav.Link href="/signup">SignUp</Nav.Link>
+            <Nav.Link href="/features">Cocktails</Nav.Link>
+            <Nav.Link href="/pricing">About</Nav.Link>
             </Nav>
         </Navbar>
     )
