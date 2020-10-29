@@ -31,21 +31,20 @@ function AddDrink() {
   return (
     <div className="App">
       <h2>Mix a Drink Below!</h2>
-     
-      <InputGroup id="txtarea" >
+      <br/>
+      <InputGroup className="txtarea" >
               <Form.Control
                 type="text"
                 placeholder="Drink Name" >
               </Form.Control>
             </InputGroup>
-
       <br/>
       <Button variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
       <br />
       {fields.map((field, idx) => {
         return (
           <div key={`${field}-${idx}`}>
-            <InputGroup id="txtarea" >
+            <InputGroup className="txtarea" >
               <Form.Control
                 type="text"
                 placeholder="Ingredient"
@@ -62,9 +61,8 @@ function AddDrink() {
         );
       })}
 <br/>
-
-      <Form.Control id="txtarea" placeholder="Instructions" as="textarea" rows={3} />
-
+      <Form.Control className="txtarea" placeholder="Instructions" as="textarea" rows={3} />
+      <br/>
       <Button variant="dark">Submit Creation</Button>{' '}
       {/* add handle submit to button */}
 
