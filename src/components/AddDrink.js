@@ -25,35 +25,39 @@ function AddDrink() {
 
   return (
     <div className="App">
-      <h2>Mix a Drink Below!</h2>
-     
+      <h1 className="mixheading">Mix a Drink Below!</h1>
+      <h2>Drink Name</h2>
       <form>
-        <input type="text" placeholder="Drink Name" />
+        <input type="text" placeholder="Enter drink name here" />
       </form>
-      <br/>
+    
+      <h2>Add Ingredients</h2>
       <button type="button" onClick={() => handleAdd()}>
-        Add Ingredient
-      </button>
-      <br />
+                      + Add more ingredients
+                    </button>
       {fields.map((field, idx) => {
         return (
           <div key={`${field}-${idx}`}>
             <input
               type="text"
-              placeholder="Ingredient"
+              placeholder="Enter ingredients here"
               value={field.value || ""}
               onChange={(e) => handleChange(idx, e)}
-            />
+            />{" "}
             
-            <button id="delete" type="button" onClick={() => handleRemove(idx)}>
+            <button style={{backgroundColor:"#EDECEA", padding:"2px"}}type="button" onClick={() => handleRemove(idx)}>
               X
             </button>
+            
+            <br />
+
           </div>
         );
       })}
-<br/>
+      <br />
+      <h2>List of Instructions</h2>
       <form>
-        <textarea placeholder="Instructions" />
+        <textarea placeholder="Enter instructions here" />
       </form>
 
       <button type="button">Submit Creation</button>
