@@ -3,7 +3,7 @@ import Testrandom from "./components/Testrandom";
 
 function Testapp() {
     const [results, setResults] =
-    React.useState({});
+    React.useState([]);
     const url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
     const getResults = async () => {
@@ -14,13 +14,12 @@ function Testapp() {
     };
 
     React.useEffect(() => {
-        getResults();
+        getResults()
     }, []);
 
     return (
         <>
-        <Testrandom drinks={results}
-        getResults={getResults}/>
+            <Testrandom result={results} getResults={getResults}/>
         </>
     );
 }

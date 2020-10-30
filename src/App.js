@@ -12,7 +12,7 @@ function App() {
       <h1>Bartender App</h1>
       <Intro/>
       <AddDrink/>
-      <RandomDrink/>
+      <RandomDrink />
       {/* <TestApp/>
       <Testindex/> */}
     </div>
