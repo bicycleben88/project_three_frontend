@@ -61,9 +61,9 @@ const Signup = (props) => {
                 <h1>Sign Up</h1>
             </Container>
         </Jumbotron>
-        
+
         <InputGroup className="txtarea" onSubmit={handleSubmit}>
-            <Form.Group onSubmit={handleSubmit}>
+            <Form className = "moveit" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
                     name="username"
@@ -84,7 +84,7 @@ const Signup = (props) => {
 
                 <Button className="headspace" variant="dark"> Sign Up</Button>{' '}
 
-            </Form.Group>
+            </Form>
         </InputGroup>
         </>
     )
