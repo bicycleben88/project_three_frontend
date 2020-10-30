@@ -3,6 +3,10 @@ body {
   font-family: "Mali", cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    background-image: url("https://res.cloudinary.com/dmxibubc5/image/upload/v1604023469/depositphotos_87719934-stock-illustration-vintage-antique-palette-seamless-art_tyxrwb.jpg");
+    background-repeat: repeat;
+    background-position-y: top;
+    background-position-x: left;
 } 
 
 h1 {
