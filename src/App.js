@@ -46,11 +46,11 @@ function App() {
         return <>
           <Intro {...rProps}/>
           <Row>
-          <Col>1</Col>
+          <Col></Col>
           <Col>
           <AddDrink {...rProps}/>
           </Col>
-          <Col>2</Col>
+          <Col></Col>
           </Row>
         </>}} />
         <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
