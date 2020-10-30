@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Testrandom from "./components/Testrandom";
+import App from './App'
 
 function Testapp() {
     const [results, setResults] =
