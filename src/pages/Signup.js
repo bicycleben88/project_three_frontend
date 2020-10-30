@@ -68,7 +68,7 @@ const Signup = (props) => {
         <Row>
           <Col></Col>
           <Col>
-        <InputGroup className="txtarea midform" onSubmit={handleSubmit}>
+        <InputGroup className="txtarea midform">
             <Form className = "moveit" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
@@ -87,9 +87,12 @@ const Signup = (props) => {
                     placeholder="Create Password" 
                     style={{width: '155px'}}>
                 </Form.Control>
-
-                <Button className="headspace buttons" variant="dark"> Sign Up</Button>{' '}
-
+                <input 
+                    type="submit"
+                    value="Sign Up"
+                    className="headspace buttons" 
+                    variant="dark"
+                />
             </Form>
         </InputGroup>
         </Col>
