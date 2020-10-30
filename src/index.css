@@ -3,12 +3,11 @@ body {
   font-family: "Mali", cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  background-image: url("https://us.123rf.com/450wm/ikvyatkovskaya/ikvyatkovskaya2007/ikvyatkovskaya200708157/152167644-glass-of-citrus-juice-made-of-orange-and-lemon-slices-with-cocktail-straw-isolated-on-white-backgrou.jpg?ver=6");
-  background-repeat: repeat-y;
-  background-position-y: bottom;
-  background-position-x: left;
-}
+    background-image: url("https://res.cloudinary.com/dmxibubc5/image/upload/v1604023469/depositphotos_87719934-stock-illustration-vintage-antique-palette-seamless-art_tyxrwb.jpg");
+    background-repeat: repeat;
+    background-position-y: top;
+    background-position-x: left;
+} 
 
 h1 {
   font-family: "Limelight", cursive;
