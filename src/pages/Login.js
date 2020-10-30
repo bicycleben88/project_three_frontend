@@ -5,6 +5,8 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import '../Signup.css';
 
 const Login = (props) => {
@@ -63,7 +65,11 @@ const Login = (props) => {
                 <h1>Log In</h1>
             </Container>
         </Jumbotron>
-        <InputGroup className="txtarea" onSubmit={handleSubmit}>
+        <Row>
+          <Col></Col>
+          <Col>
+          
+        <InputGroup className="txtarea midform" onSubmit={handleSubmit}>
             <Form className = "moveit" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
@@ -83,10 +89,13 @@ const Login = (props) => {
                     style={{width: '155px'}}>
                 </Form.Control>
 
-                <Button className="headspace" variant="dark">Login</Button>{' '}
+                <Button className="headspace buttons" variant="dark">Login</Button>{' '}
 
             </Form>
         </InputGroup>
+        </Col>
+          <Col></Col>
+          </Row>
         </>
     )
 };

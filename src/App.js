@@ -8,6 +8,8 @@ import Navigation from './components/Navbar';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './pages/Login';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 //send Global Context to all components
 export const GlobalContext = React.createContext(null)
@@ -43,7 +45,13 @@ function App() {
         <Route exact path='/' render={(rProps) => {
         return <>
           <Intro {...rProps}/>
+          <Row>
+          <Col></Col>
+          <Col>
           <AddDrink {...rProps}/>
+          </Col>
+          <Col></Col>
+          </Row>
         </>}} />
         <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
         <Route exact path='/recipe' render={(rProps => <Recipe {...rProps} />)} /> 

@@ -7,11 +7,11 @@ function Intro() {
 return(
     <Jumbotron>
         <Container>
-        <h1>Welcome to Cocktail Hour!</h1>
-        <h5> 
+        <h1>Cocktail Hour</h1>
+        <h5 className="introtext"> 
             Your go to destination if you're parched and looking to party. <br/> 
-            Feel free to <a href="#"> search for a drink</a> below, or hit <a href="#">"Screw It!"</a> to have a random drink populate for you. <br/>
-            Additionally, you can <a href="#">signup/login</a> to create your own drink and save it for future reference.
+            <a href="#"> Search for a drink</a> below, or <a href="/signup">signup/login</a> to create your own drink and save it for later.<br/>
+            Additionally, you can <a href="#">"Screw It!"</a> to populate a random drink.
         </h5>
         </Container>
     </Jumbotron>
