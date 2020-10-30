@@ -92,6 +92,7 @@ const Login = (props) => {
                     value="Log In"
                     className="headspace buttons" 
                     variant="dark"
+                    style={{border:"none", borderRadius:"2px"}}
                 />
             </Form>
         </InputGroup>
