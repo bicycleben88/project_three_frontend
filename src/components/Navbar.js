@@ -11,12 +11,12 @@ function Navigation(){
 
      //log out button with click event
      const logOut = (
-        <Link onClick={() => {
+        <Nav.Link onClick={() => {
             //remove token saved in local storage
             window.localStorage.removeItem("token");
             //setGlobalState token to null;
             setGlobalState({...globalState, token: null})
-        }}>Log Out</Link>
+        }}>Log Out</Nav.Link>
     )
 
     return(
