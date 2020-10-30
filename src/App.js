@@ -45,7 +45,7 @@ function App() {
           <Intro {...rProps}/>
           <AddDrink {...rProps}/>
         </>}} />
-        <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
+        <Route exact path='https://stoic-jepsen-f0ca22.netlify.app/signup' render={(rProps => <Signup {...rProps} />)} />
         <Route exact path='/recipe' render={(rProps => <Recipe {...rProps} />)} /> 
         <Route exact path="/login" render={(rProps => <Login {...rProps} />)} />
       </Switch>

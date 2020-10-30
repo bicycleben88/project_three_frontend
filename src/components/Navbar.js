@@ -9,7 +9,7 @@ function Navigation(){
         <Navbar id="stucktop" bg="dark" variant="dark">
             <Navbar.Brand href="/">Cocktail Hour</Navbar.Brand>
             <Nav className="mr-auto">
-            <Nav.Link href="https://stoic-jepsen-f0ca22.netlify.app/signup">SignUp</Nav.Link>
+            <Nav.Link href="/signup">SignUp</Nav.Link>
             <Nav.Link href="/features">Cocktails</Nav.Link>
             <Nav.Link href="/pricing">About</Nav.Link>
             </Nav>
