@@ -29,7 +29,7 @@ function AddDrink() {
 
   return (
     <div className="App">
-      <h2>Mix a Drink Below!</h2>
+      <h2 style={{color: "white"}}>Mix a Drink Below!</h2>
       
       <InputGroup className="txtarea" >
         <Form.Control
