@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 function AddDrink() {
@@ -28,8 +30,9 @@ function AddDrink() {
   //function handleSubmit(){}
 
   return (
-    <div className="App">
-      <h2 style={{color: "white"}}>Mix a Drink Below!</h2>
+    <div>
+    <div className="midform">
+      <h2 style={{color: "#f4dbaf"}}>Mix Your Own</h2>
       
       <InputGroup className="txtarea" >
         <Form.Control
@@ -38,7 +41,7 @@ function AddDrink() {
         </Form.Control>
       </InputGroup>
 
-      <Button className="headspace" variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
+      <Button className="headspace buttons" variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
       <br />
       {fields.map((field, idx) => {
         return (
@@ -52,7 +55,7 @@ function AddDrink() {
               </Form.Control>
 
               <InputGroup.Append>
-                <Button variant="dark" id="delete" onClick={() => handleRemove(idx)}>X</Button>{' '}
+                <Button variant="dark" className="buttons" id="delete" onClick={() => handleRemove(idx)}>X</Button>{' '}
               </InputGroup.Append>
             </InputGroup>
           </div>
@@ -61,10 +64,10 @@ function AddDrink() {
 
       <Form.Control className="txtarea headspace" placeholder="Instructions" as="textarea" rows={3} />
       
-      <Button className="headspace" variant="dark">Submit Creation</Button>{' '}
+      <Button className="headspace buttons" variant="dark">Submit Creation</Button>{' '}
       {/* add handle submit to button */}
-      
     </div>
+  </div>
   );
 }
 
