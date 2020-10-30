@@ -3,12 +3,7 @@ body {
   font-family: "Mali", cursive, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  background-image: url("https://us.123rf.com/450wm/ikvyatkovskaya/ikvyatkovskaya2007/ikvyatkovskaya200708157/152167644-glass-of-citrus-juice-made-of-orange-and-lemon-slices-with-cocktail-straw-isolated-on-white-backgrou.jpg?ver=6");
-  background-repeat: repeat-y;
-  background-position-y: bottom;
-  background-position-x: left;
-}
+} 
 
 h1 {
   font-family: "Limelight", cursive;

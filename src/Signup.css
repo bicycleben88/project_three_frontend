@@ -12,3 +12,10 @@ margin-right: auto;
 form{
     float: right;
 }
+
+body{
+background-image: url("https://res.cloudinary.com/dmxibubc5/image/upload/v1604023469/depositphotos_87719934-stock-illustration-vintage-antique-palette-seamless-art_tyxrwb.jpg");
+background-repeat: repeat;
+background-position-y: top;
+background-position-x: left;
+} 
