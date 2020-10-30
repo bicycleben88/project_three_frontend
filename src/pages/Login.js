@@ -5,6 +5,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import '../Signup.css';
 
 const Login = (props) => {
     //Deconstruct globalState and setGlobalState and pass into useContext
@@ -63,7 +64,7 @@ const Login = (props) => {
             </Container>
         </Jumbotron>
         <InputGroup className="txtarea" onSubmit={handleSubmit}>
-            <form onSubmit={handleSubmit}>
+            <Form className = "moveit" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
                     name="username"
@@ -73,6 +74,7 @@ const Login = (props) => {
                     style={{width: '155px'}}>
                 </Form.Control>
                 <Form.Control
+                    className= "headspace"
                     type="password"
                     name="password"
                     value={form.password}
@@ -80,12 +82,10 @@ const Login = (props) => {
                     placeholder="Enter Password" 
                     style={{width: '155px'}}>
                 </Form.Control>
-                <Form.Control
-                    type="submit"
-                    value="Log In" 
-                    style={{width: '155px'}}>
-                </Form.Control>
-            </form>
+
+                <Button className="headspace" variant="dark">Login</Button>{' '}
+
+            </Form>
         </InputGroup>
         </>
     )
