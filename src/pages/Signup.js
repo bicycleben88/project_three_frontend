@@ -92,6 +92,7 @@ const Signup = (props) => {
                     value="Sign Up"
                     className="headspace buttons" 
                     variant="dark"
+                    style={{border:"none", borderRadius:"2px"}}
                 />
             </Form>
         </InputGroup>
