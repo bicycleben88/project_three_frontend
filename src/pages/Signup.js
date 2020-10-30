@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {GlobalContext} from '../App';
+import '../Signup.css';
 
 const Signup = (props) => {
      //Deconstruct globalState and setGlobalState and pass into useContext
@@ -60,8 +61,9 @@ const Signup = (props) => {
                 <h1>Sign Up</h1>
             </Container>
         </Jumbotron>
+        
         <InputGroup className="txtarea" onSubmit={handleSubmit}>
-            <form onSubmit={handleSubmit}>
+            <Form.Group onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
                     name="username"
@@ -71,6 +73,7 @@ const Signup = (props) => {
                     style={{width: '155px'}}>
                 </Form.Control>
                 <Form.Control
+                    className= "headspace"
                     type="password"
                     name="password"
                     value={form.password}
@@ -78,12 +81,10 @@ const Signup = (props) => {
                     placeholder="Create Password" 
                     style={{width: '155px'}}>
                 </Form.Control>
-                <Form.Control
-                    type="submit"
-                    value="Sign Up" 
-                    style={{width: '55px'}}>
-                </Form.Control>
-            </form>
+
+                <Button className="headspace" variant="dark"> Sign Up</Button>{' '}
+
+            </Form.Group>
         </InputGroup>
         </>
     )
