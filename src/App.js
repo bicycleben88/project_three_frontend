@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
+
 import AddDrink from './components/AddDrink';
 import Intro from './components/Intro';
 import Signup from './pages/Signup';
-import Recipe from './pages/Recipe'
+import Recipe from './pages/Recipe';
+import RandomDrink from './components/Testrandom';
 import Navigation from './components/Navbar';
 import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -53,6 +55,7 @@ function App() {
           <Col></Col>
           </Row>
         </>}} />
+        <Route exact path='/screwit' render={(rProps => <RandomDrink {...rProps} />)} />
         <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
         <Route exact path='/recipe' render={(rProps => <Recipe {...rProps} />)} /> 
         <Route exact path="/login" render={(rProps => <Login {...rProps} />)} />
