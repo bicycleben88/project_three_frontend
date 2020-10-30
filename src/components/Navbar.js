@@ -24,6 +24,7 @@ function Navigation(){
             <Navbar.Brand className="brand" href="/">Cocktail Hour</Navbar.Brand>
             <Nav className="mr-auto">
             <Nav.Link className="navlink" href="/signup">SignUp</Nav.Link>
+            <Nav.Link className="navlink" href="/login">LogIn</Nav.Link>
             {/* if there's token in local storage then render log out button */}
             {globalState.token ? logOut : null}
             <Nav.Link className="navlink" href="/features">Cocktails</Nav.Link>

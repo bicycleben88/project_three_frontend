@@ -10,7 +10,7 @@ return(
         <h1>Cocktail Hour</h1>
         <h5 className="introtext"> 
             Your go to destination if you're parched and looking to party. <br/> 
-            <a href="#"> Search for a drink</a> below, or <a href="/signup">signup/login</a> to create your own drink and save it for later.<br/>
+            <a href="#"> Search for a drink</a> below, or <a href="/signup">signup</a>/<a href="/login">login</a> to create your own drink and save it for later.<br/>
             Additionally, you can <a href="/screwit">"Screw It!"</a> to populate a random drink.
         </h5>
         </Container>
