@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 
 function AddDrink() {
   const [fields, setFields] = useState([{ value: null }]);
@@ -24,44 +30,45 @@ function AddDrink() {
   //function handleSubmit(){}
 
   return (
-    <div className="App">
-      <h2>Mix a Drink Below!</h2>
-     
-      <form>
-        <input type="text" placeholder="Drink Name" />
-      </form>
-      <br/>
-      <button type="button" onClick={() => handleAdd()}>
-        Add Ingredient
-      </button>
+    <div>
+    <div className="midform">
+      <h2 style={{color: "#f4dbaf"}}>Mix Your Own</h2>
+      
+      <InputGroup className="txtarea" >
+        <Form.Control
+          type="text"
+          placeholder="Drink Name" >
+        </Form.Control>
+      </InputGroup>
+
+      <Button className="headspace buttons" variant="dark" onClick={() => handleAdd()}>Add Ingredient</Button>{' '}
       <br />
       {fields.map((field, idx) => {
         return (
           <div key={`${field}-${idx}`}>
-            <input
-              type="text"
-              placeholder="Ingredient"
-              value={field.value || ""}
-              onChange={(e) => handleChange(idx, e)}
-            />
-            
-            <button id="delete" type="button" onClick={() => handleRemove(idx)}>
-              X
-            </button>
+            <InputGroup className="txtarea headspace" >
+              <Form.Control
+                type="text"
+                placeholder="Ingredient"
+                value={field.value || ""}
+                onChange={(e) => handleChange(idx, e)}>
+              </Form.Control>
+
+              <InputGroup.Append>
+                <Button variant="dark" className="buttons" id="delete" onClick={() => handleRemove(idx)}>X</Button>{' '}
+              </InputGroup.Append>
+            </InputGroup>
           </div>
         );
       })}
-<br/>
-      <form>
-        <textarea placeholder="Instructions" />
-      </form>
 
-      <button type="button">Submit Creation</button>
+      <Form.Control className="txtarea headspace" placeholder="Instructions" as="textarea" rows={3} />
+      
+      <Button className="headspace buttons" variant="dark">Submit Creation</Button>{' '}
       {/* add handle submit to button */}
     </div>
+  </div>
   );
 }
-
-//   Inspired by: https://codesandbox.io/s/q555kp8jj?fontsize=14&file=/src/index.js:119-1141
 
 export default AddDrink;

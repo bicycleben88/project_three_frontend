@@ -1,0 +1,15 @@
+.moveit{
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+}
+
+.form-control{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form{
+    float: right;
+}
+
