@@ -15,7 +15,23 @@ const Recipe = (props) => {
           <h1>Recipes</h1>
         </Container>
       </Jumbotron>
-      <p>recipezz</p>
+      
+      <p>Make the recipes appear here plz</p>
+      {/* <table>
+          <tbody>
+            {state.recipes.map(recipe => (
+              <tr key={recipe._id}>
+                  
+                <td>{recipe.image}</td>
+                <td>{recipe.name}</td>
+                <td>{recipe.ingredient}</td>
+                <td>{recipe.instructions}</td>
+    
+              </tr>
+            ))}
+          </tbody>
+       </table> */}
+
     </>
   );
 };
