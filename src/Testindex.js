@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Testapp from './Testapp';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter as Router} from 'react-router-dom'
+
 
 ReactDOM.render(
-  <Router>
   <React.StrictMode>
     <Testapp />
-  </React.StrictMode>
-  </Router>,
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
@@ -18,3 +16,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+export default ReactDOM.render;
