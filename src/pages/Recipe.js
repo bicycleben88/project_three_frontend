@@ -10,6 +10,21 @@ const Recipe = (props) => {
   const { globalState, setGlobalState } = React.useContext(GlobalContext);
   const { url } = globalState;
 
+  const [recipe, setRecipe] = React.useState({})
+  React.useEffect(() => {
+    getRecipes()
+  }, [])
+  //fetch
+  const getRecipes = () => {fetch(`${url}/recipe`)
+    //convert response to json
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      setRecipe(data)
+    })}
+
+const loaded = () => {
+
   return (
     <>
       <Jumbotron>
@@ -21,25 +36,32 @@ const Recipe = (props) => {
       <Row>
         <Col></Col>
         <Col>
-          <div className="recipe midform">
-            <p>Make the recipes appear here plz</p>
-
-            <h1>{url.name}</h1>
-            <img src={url.image} alt={url.name}></img>
-
-            <h3><b>Ingreients</b></h3>
-            <h4>{url.ingredient}</h4>
-            <p className="ii">Font Size Test</p>
-
-            <h3><b>Instructions</b></h3>
-            <h4>{url.instructions}</h4>
-            <p className="ii">Font Size Test stir dont shake, add ice enjoy! </p>
+          <div>
+            {recipe.map(recipe => ( 
+              <div className="recipe midform">
+              <h2>{recipe.name}</h2>
+              <img src={recipe.image} alt={recipe.name}></img>
+  
+              <h3><b>Ingredients</b></h3>
+              <p className="ii">{recipe.ingredient}</p>
+  
+              <h3><b>Instructions</b></h3>
+              <p className="ii">{recipe.instructions}</p>
+              </div>
+            ))}
+            
+            
           </div>
         </Col>
         <Col></Col>
       </Row>
     </>
   );
+}
+
+return recipe.length > 0 ? loaded() : <p>mixing...</p>
+
+
 };
 
 export default Recipe;
