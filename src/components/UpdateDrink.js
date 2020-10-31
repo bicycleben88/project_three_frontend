@@ -1,113 +1,137 @@
-import React from "react";
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container';
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import {GlobalContext} from '../App';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-function App() {
-    const [drinks, setDrinks] = React.useState([])
-    // const emptyDrink = {
-    //     name: {props.drink.strDrink},
-    //     img: {props.drink.strDrinkThumb},
-    //     ingredients: {}
-    // }
-    const emptyDrink = {
-        name: "",
-        img: "",
-        ingredients: "",
-        instructions: "",
+//create empty user object
+const initDrink = {
+  drinkName: "",
+  ingredients: [],
+  instructions: "",
+};
+
+const AddDrink = (props) => {
+  //Deconstruct globalState and setGlobalState and pass into useContext
+  const {globalState, setGlobalState} = React.useContext(GlobalContext);
+  const {url, token} = globalState;
+  const [drink, setDrink] = useState(initDrink);
+
+  const handleChange = (event) => {
+    const ingredientIndex = event.target.name.match(/\d+/g)
+ 
+
+    if (ingredientIndex == 0 || ingredientIndex) {
+      drink.ingredients[ingredientIndex] = event.target.value
+      setDrink({...drink, ingredients: drink.ingredients });
+    } else {
+      setDrink({...drink, [event.target.name]: event.target.value});
     }
+  };
 
-    const [selectedDrink, setSelectedDrink] = React.useState(emptyDrink)
+  const handleAdd = (event) => {
+    drink.ingredients.push('')
+    setDrink({...drink, ingredients: drink.ingredients });
+  };
 
-    const getDrinks = () => {
-        fetch(url + "/recipe")
-        .then(response => response.json())
-        .then(data => {
-            setDrinks(data)
-        })
-    }
+  const handleRemove = (i, event) => {
+    drink.ingredients.pop();
+    setDrink({...drink, ingredients: drink.ingredients });
+  };
 
-    React.useEffect(() => {
-        getDrinks()
-    }, [])
+  //When user clicks Log in
+  const handleSubmit = (event) => {
+    //stop page from reloading
+    event.preventDefault();
+    const { drinkName, ingredient, instructions } = drink;
+    //make API call
+    fetch(`${url}/recipe`, {
+      //enter method details
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `bearer ${token}`
+      },
+      body: JSON.stringify({ drink }),
+    })
+      //convert response to json
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //reset the form
+        setDrink(initDrink);
+        //send user to home page
+        props.history.push("/recipe");
+    });
+  };
 
-    const handleUpdate = (drink) => {
-        fetch(url + "/recipe" + drink._id, {
-            method: "put",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(drink),
-        }).then((response) => getDrinks());
-    };
+  return (
+    <div>
+      <div className="midform">
+        <h2 style={{ color: "#f4dbaf" }}>Mix Your Own</h2>
 
-    const selectDrink = (drink) => {
-        setSelectedDrink(drink)
-    };
+        <Form onSubmit={handleSubmit} id="add-form">
+          <InputGroup className="txtarea">
+            <Form.Control
+              type="text"
+              name="drinkName"
+              placeholder="Drink Name"
+              value={drink.drinkName}
+              onChange={handleChange}
+            ></Form.Control>
+          </InputGroup>
+          <Button
+            className="headspace buttons"
+            variant="dark"
+            onClick={(e) => handleAdd(e)}
+          >
+            Add Ingredient
+          </Button>{" "}
+          <br />
+          {drink.ingredients.map((ingredient, idx) => {
+            return (
+              <div key={`${ingredient}-${idx}`}>
+                <InputGroup className="txtarea headspace">
+                  <Form.Control
+                    type="text"
+                    name={`ingredient${idx}`}
+                    placeholder="Ingredient"
+                    value={drink.ingredients[idx] || ""}
+                    onChange={(e) => handleChange(e)}
+                  ></Form.Control>
 
-    const deleteDrink = (drink) => {
-        fetch(url + "/recipe" + drink._id, {
-            method: "delete",
-        }).then((response) => getDrinks());
-    }
-    return (
-        <div className="Update">
-            <Jumbotron>
-                <Container>
-                    <h1>Recipes</h1>
-                </Container>
-            </Jumbotron>
-            <Link to="/recipe">
-            <Button className="headspace buttons" variant="dark">Edit</Button>
-            </Link>
-            <main>
-        {/* there are three routes below */}
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={(rp) => <Display selectDrink={selectDrink} {...rp} drinks={drinks} 
-            deleteDrink={deleteDrinks} />}
+                  <InputGroup.Append>
+                    <Button
+                      variant="dark"
+                      className="buttons"
+                      id="delete"
+                      onClick={() => handleRemove(idx)}
+                    >
+                      X
+                    </Button>{" "}
+                  </InputGroup.Append>
+                </InputGroup>
+              </div>
+            );
+          })}
+          <Form.Control
+            className="txtarea headspace"
+            name="instructions"
+            placeholder="Instructions"
+            value={drink.instructions}
+            as="textarea"
+            onChange={handleChange}
+            rows={3}
           />
-          {/* <Route
-            exact
-            path="/create"
-            render={(rp) => (
-              <Form {...rp} label="create" drink={emptyDrink} handleSubmit={handleCreate} />
-            )}
-          /> */}
-          <Route
-            exact
-            path="/edit"
-            render={(rp) => (
-              <Form {...rp} label="update" drink={selectedDrink} handleSubmit={handleUpdate} />
-            )}
-          />
-        </Switch>
-      </main>
-        </div>
-    )
-}
+          <Button type="submit" className="headspace buttons" variant="dark">
+            Submit Creation
+          </Button>{" "}
+        </Form>
+      </div>
+    </div>
+  );
+};
 
-export default App;
-
-// const Drinks = {
-//     name: {props.drink},
-//     img: {props.drink.img}
-//     ingredients: {props.drink.ingredients},
-//     instructions: {props.drink.instructions},
-//   };
-
-// const Update = (props) => {
-//     const [drink, setDrink] = useState(Drinks);
-
-//     return (
-//         <>
-//         <Jumbotron>
-//             <Container>
-//                 <h1>Edit Drink</h1>
-//             </Container>
-//         </Jumbotron>
-//         <
-//         </>
-//     )
-// }
+export default AddDrink;
