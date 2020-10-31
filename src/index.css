@@ -88,6 +88,9 @@ h2{
   font-size: 30px;
 }
 
+#add-form {
+  padding: 35px;
+}
 #contents{
   padding: 10px;
   color: #f4dbaf;

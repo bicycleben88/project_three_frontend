@@ -16,15 +16,11 @@ const AddDrink = () => {
   const [drink, setDrink] = useState(initDrink);
 
   const handleChange = (event) => {
-    console.log(event.target.name)
-    // Checks of the name attributes of the field contains a number. ex: (ingredient0,ingredient1, ingresient2)
     const ingredientIndex = event.target.name.match(/\d+/g)
-    console.log("ingredientIndex", ingredientIndex)
+ 
 
     if (ingredientIndex == 0 || ingredientIndex) {
-      console.log("is an ingrediente")
       drink.ingredients[ingredientIndex] = event.target.value
-      console.log("ingredients array", drink.ingredients[ingredientIndex])
       setDrink({...drink, ingredients: drink.ingredients });
     } else {
       setDrink({...drink, [event.target.name]: event.target.value});
@@ -37,8 +33,8 @@ const AddDrink = () => {
   };
 
   const handleRemove = (i, event) => {
-    // values.splice(i, 1);
-    setDrink({...drink, [event.target.name]: event.target.value });
+    drink.ingredients.pop();
+    setDrink({...drink, ingredients: drink.ingredients });
   };
 
   //When user clicks Log in
@@ -77,7 +73,7 @@ const AddDrink = () => {
       <div className="midform">
         <h2 style={{ color: "#f4dbaf" }}>Mix Your Own</h2>
 
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} id="add-form">
           <InputGroup className="txtarea">
             <Form.Control
               type="text"
