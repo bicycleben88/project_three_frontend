@@ -15,6 +15,7 @@ const Recipe = (props) => {
   React.useEffect(() => {
     getRecipes()
   }, [])
+  
   //fetch
   const getRecipes = () => {fetch(`${url}/recipe`)
     //convert response to json
