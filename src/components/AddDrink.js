@@ -1,37 +1,39 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import {GlobalContext} from '../App';
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-//create empty user object
-const initDrink = {
-  drinkName: "",
-  ingredients: [],
-  instructions: "",
-};
 
 const AddDrink = () => {
+  const {globalState, setGlobalState} = React.useContext(GlobalContext);
+  const {url, token, username } = globalState;
+
+  //create empty user object
+  const initDrink = {
+    drinkName: "",
+    ingredients: [],
+    instructions: "",
+  };
+  
   const [drink, setDrink] = useState(initDrink);
 
   const handleChange = (event) => {
-    console.log(event.target.name)
     // Checks of the name attributes of the field contains a number. ex: (ingredient0,ingredient1, ingresient2)
     const ingredientIndex = event.target.name.match(/\d+/g)
-    console.log("ingredientIndex", ingredientIndex)
 
     if (ingredientIndex == 0 || ingredientIndex) {
-      console.log("is an ingrediente")
       drink.ingredients[ingredientIndex] = event.target.value
-      console.log("ingredients array", drink.ingredients[ingredientIndex])
       setDrink({...drink, ingredients: drink.ingredients });
     } else {
       setDrink({...drink, [event.target.name]: event.target.value});
     }
   };
 
-  const handleAdd = (event) => {
+  const handleAdd = () => {
+    // Push an empty string to the ingredients hash
     drink.ingredients.push('')
     setDrink({...drink, ingredients: drink.ingredients });
   };
@@ -43,24 +45,24 @@ const AddDrink = () => {
 
   //When user clicks Log in
   const handleSubmit = (event) => {
+    console.log(token)
     //stop page from reloading
     event.preventDefault();
     //deconstruct username and password from state
-    // console.log(fields);
-    // const { drinkName, ingredient, instructions } = fields;
+    console.log(drink);
+    const { drinkName, ingredients, instructions } = drink;
     // //make API call
-    // fetch(`${url}/auth/login`, {
-    //   //enter method details
-    //   method: "post",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({  }),
-    // })
-    //   //convert response to json
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
+    fetch(`${url}/recipe`, {
+      //enter method details
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `bearer ${token}`
+      },
+      body: JSON.stringify({ drinkName, ingredients, instructions, username}),
+    }).then((response) => response.json())
+      .then((data) => {
+        console.log("response:", data);
     //     //store token from logged-in user in local storage
     //     window.localStorage.setItem("token", JSON.stringify(data));
     //     //add token from logged-in user to globalState
@@ -69,7 +71,7 @@ const AddDrink = () => {
     //     setForm(blank);
     //     //send user to home page
     //     props.history.push("/");
-    // });
+    });
   };
 
   return (
@@ -90,7 +92,7 @@ const AddDrink = () => {
           <Button
             className="headspace buttons"
             variant="dark"
-            onClick={(e) => handleAdd(e)}
+            onClick={() => handleAdd()}
           >
             Add Ingredient
           </Button>{" "}

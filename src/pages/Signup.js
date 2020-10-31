@@ -49,7 +49,7 @@ const Signup = (props) => {
         .then(data => {
             console.log(data);
             //add token from logged-in user to globalState
-            setGlobalState({...globalState, token: data.token})
+            setGlobalState({...globalState, token: data.token, username: username})
             //reset the form
             setForm(blank);
             //send user to log in page

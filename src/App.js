@@ -21,9 +21,10 @@ function App() {
   //Create global state for all components
   const [globalState, setGlobalState] = React.useState({
     //API URL
-    url: "https://project-three-api.herokuapp.com",
+    url: "http://localhost:4500",
     //JWT token
-    token: null
+    token: null,
+    username: '',
   });
 
    //load initial state
