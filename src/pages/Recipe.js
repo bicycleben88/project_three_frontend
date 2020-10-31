@@ -5,6 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { Link } from 'react-router-dom'
 
 const Recipe = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
@@ -61,7 +62,7 @@ const Recipe = (props) => {
               <h3><b>Instructions</b></h3>
               <p className="ii">{recipe.instructions}</p>
 
-              <Button className="headspace buttons" variant="dark">Edit</Button>{' '}
+              <Link to='/update'><Button className="headspace buttons" variant="dark">Edit</Button>{' '}</Link>
               <Button className="headspace buttons" variant="dark" onClick={() => handleDelete(recipe._id)}>Delete</Button>{' '}
 
               <hr style={{border:" 1px solid #f4dbaf"}}/>

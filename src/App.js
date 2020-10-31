@@ -6,6 +6,7 @@ import Intro from './components/Intro';
 import Signup from './pages/Signup';
 import Recipe from './pages/Recipe';
 import RandomDrink from './components/Testrandom';
+import Update from './components/UpdateDrink'
 import Testapp from './Testapp';
 import Navigation from './components/Navbar';
 import { Route, Switch } from 'react-router-dom';
@@ -60,6 +61,7 @@ function App() {
         <Route exact path='/signup' render={(rProps => <Signup {...rProps} />)} />
         <Route exact path='/recipe' render={(rProps => <Recipe {...rProps} />)} /> 
         <Route exact path="/login" render={(rProps => <Login {...rProps} />)} />
+        <Route exact path="/update" render={(rProps => <Update {...rProps} />)} />
       </Switch>
       </main>
     </div>
