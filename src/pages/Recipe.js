@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 const Recipe = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
   const { globalState, setGlobalState } = React.useContext(GlobalContext);
-  const { url } = globalState;
+  const { url, token } = globalState;
 
   const [recipe, setRecipe] = React.useState({})
   React.useEffect(() => {
@@ -24,7 +24,18 @@ const Recipe = (props) => {
       setRecipe(data)
     })}
 
-const loaded = () => {
+  const handleDelete = (id) => {
+    fetch(`${url}/recipe/${id}`, {
+      method: 'delete',
+      headers:{
+        authorization: `bearer ${token}`
+      }
+    }).then(() => {
+      getRecipes()
+    });
+  };
+
+  const loaded = () => {
 
   return (
     <>
@@ -50,7 +61,7 @@ const loaded = () => {
               <p className="ii">{recipe.instructions}</p>
 
               <Button className="headspace buttons" variant="dark">Edit</Button>{' '}
-              <Button className="headspace buttons" variant="dark">Delete</Button>{' '}
+              <Button className="headspace buttons" variant="dark" onClick={() => handleDelete(recipe._id)}>Delete</Button>{' '}
 
               <hr style={{border:" 1px solid #f4dbaf"}}/>
               </div>

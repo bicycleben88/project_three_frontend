@@ -16,15 +16,11 @@ const AddDrink = () => {
   const [drink, setDrink] = useState(initDrink);
 
   const handleChange = (event) => {
-    console.log(event.target.name)
-    // Checks of the name attributes of the field contains a number. ex: (ingredient0,ingredient1, ingresient2)
     const ingredientIndex = event.target.name.match(/\d+/g)
-    console.log("ingredientIndex", ingredientIndex)
+ 
 
     if (ingredientIndex == 0 || ingredientIndex) {
-      console.log("is an ingrediente")
       drink.ingredients[ingredientIndex] = event.target.value
-      console.log("ingredients array", drink.ingredients[ingredientIndex])
       setDrink({...drink, ingredients: drink.ingredients });
     } else {
       setDrink({...drink, [event.target.name]: event.target.value});
