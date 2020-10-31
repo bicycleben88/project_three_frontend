@@ -2,6 +2,8 @@ import React from 'react'
 import {GlobalContext} from '../App';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const Recipe = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
@@ -16,7 +18,11 @@ const Recipe = (props) => {
         </Container>
       </Jumbotron>
       
-      <p>Make the recipes appear here plz</p>
+      <Row>
+          <Col></Col>
+          <Col>
+          
+      <p className="recipe midform">Make the recipes appear here plz</p>
       {/* <table>
           <tbody>
             {state.recipes.map(recipe => (
@@ -32,6 +38,9 @@ const Recipe = (props) => {
           </tbody>
        </table> */}
 
+          </Col>
+          <Col></Col>
+          </Row>
     </>
   );
 };
