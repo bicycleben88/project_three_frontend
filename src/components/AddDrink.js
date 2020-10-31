@@ -33,8 +33,8 @@ const AddDrink = () => {
   };
 
   const handleRemove = (i, event) => {
-    // values.splice(i, 1);
-    setDrink({...drink, [event.target.name]: event.target.value });
+    drink.ingredients.pop();
+    setDrink({...drink, ingredients: drink.ingredients });
   };
 
   //When user clicks Log in
