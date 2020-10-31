@@ -39,7 +39,11 @@ h2{
   font-weight: normal!important;
 }
 
-.navlink{
+.ii{
+  font-size: 110%;
+}
+
+.navlink, .recipe{
   color: #f4dbaf!important;
 }
 

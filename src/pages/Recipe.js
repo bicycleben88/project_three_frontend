@@ -1,12 +1,30 @@
-import React from 'react'
-import {GlobalContext} from '../App';
-import Container from 'react-bootstrap/Container';
-import Jumbotron from 'react-bootstrap/Jumbotron'
+import React from "react";
+import { GlobalContext } from "../App";
+import Container from "react-bootstrap/Container";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 const Recipe = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
   const { globalState, setGlobalState } = React.useContext(GlobalContext);
   const { url } = globalState;
+
+  const [recipe, setRecipe] = React.useState({})
+  React.useEffect(() => {
+    getRecipes()
+  }, [])
+  //fetch
+  const getRecipes = () => {fetch(`${url}/recipe`)
+    //convert response to json
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data)
+      setRecipe(data)
+    })}
+
+const loaded = () => {
 
   return (
     <>
@@ -15,27 +33,41 @@ const Recipe = (props) => {
           <h1>Recipes</h1>
         </Container>
       </Jumbotron>
-      
-      <p>Make the recipes appear here plz</p>
-      {/* <table>
-          <tbody>
-            {state.recipes.map(recipe => (
-              <tr key={recipe._id}>
-                  
-                <td>{recipe.image}</td>
-                <td>{recipe.name}</td>
-                <td>{recipe.ingredient}</td>
-                <td>{recipe.instructions}</td>
-    
-              </tr>
-            ))}
-          </tbody>
-       </table> */}
 
+      <Row>
+        <Col></Col>
+        <Col>
+          <div>
+            {recipe.map(recipe => ( 
+              <div className="recipe midform">
+              <h2>{recipe.name}</h2>
+              <img src={recipe.image} alt={recipe.name}></img>
+  
+              <h3><b>Ingredients</b></h3>
+              <p className="ii">{recipe.ingredient}</p>
+  
+              <h3><b>Instructions</b></h3>
+              <p className="ii">{recipe.instructions}</p>
+
+              <Button className="headspace buttons" variant="dark">Edit</Button>{' '}
+              <Button className="headspace buttons" variant="dark">Delete</Button>{' '}
+
+              <hr style={{border:" 1px solid #f4dbaf"}}/>
+              </div>
+            ))}
+            
+            
+          </div>
+        </Col>
+        <Col></Col>
+      </Row>
     </>
   );
+}
+
+return recipe.length > 0 ? loaded() : <p>mixing...</p>
+
+
 };
 
-
-
-export default Recipe
+export default Recipe;
