@@ -20,11 +20,11 @@ const Testrandom = ({ result, getResults }) => {
                     <Col id="randomCol">
                 <div key={drink.idDrink}>
                     <div id="contents">
-                        <div id="drinkName">
-                    <p>{drink.strDrink}</p>
-                        </div>
+                    <h1>{drink.strDrink}</h1>
+                    <img src={drink.strDrinkThumb} width="600" height="500"></img>
                     <p>{drink.strAlcoholic}</p>
                     <p>{drink.strGlass}</p>
+                    <h2>Ingredients</h2>
                     <p>{drink.strIngredient1}   {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2}   {drink.strMeasure2}</p>
                     <p>{drink.strIngredient3}   {drink.strMeasure3}</p>
@@ -35,9 +35,9 @@ const Testrandom = ({ result, getResults }) => {
                     <p>{drink.strIngredient8}   {drink.strMeasure8}</p>
                     <p>{drink.strIngredient9}   {drink.strMeasure9}</p>
                     <p>{drink.strIngredient10}   {drink.strMeasure10}</p>
+                    <h2>Instructions</h2>
                     <p>{drink.strInstructions}</p>
                     </div>
-                    <img src={drink.strDrinkThumb} width="600" height="500"></img>
                 </div>
                     </Col>
                     <Col></Col>
