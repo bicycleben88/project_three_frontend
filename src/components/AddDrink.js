@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import {GlobalContext} from '../App';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
@@ -12,7 +13,10 @@ const initDrink = {
   instructions: "",
 };
 
-const AddDrink = () => {
+const AddDrink = (props) => {
+  //Deconstruct globalState and setGlobalState and pass into useContext
+  const {globalState, setGlobalState} = React.useContext(GlobalContext);
+  const {url, token} = globalState;
   const [drink, setDrink] = useState(initDrink);
 
   const handleChange = (event) => {
@@ -41,31 +45,26 @@ const AddDrink = () => {
   const handleSubmit = (event) => {
     //stop page from reloading
     event.preventDefault();
-    //deconstruct username and password from state
-    // console.log(fields);
-    // const { drinkName, ingredient, instructions } = fields;
-    // //make API call
-    // fetch(`${url}/auth/login`, {
-    //   //enter method details
-    //   method: "post",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({  }),
-    // })
-    //   //convert response to json
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     //store token from logged-in user in local storage
-    //     window.localStorage.setItem("token", JSON.stringify(data));
-    //     //add token from logged-in user to globalState
-    //     setGlobalState({ ...globalState, token: data.token });
-    //     //reset the form
-    //     setForm(blank);
-    //     //send user to home page
-    //     props.history.push("/");
-    // });
+    const { drinkName, ingredient, instructions } = drink;
+    //make API call
+    fetch(`${url}/recipe`, {
+      //enter method details
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `bearer ${token}`
+      },
+      body: JSON.stringify({ drink }),
+    })
+      //convert response to json
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //reset the form
+        setDrink(initDrink);
+        //send user to home page
+        props.history.push("/recipe");
+    });
   };
 
   return (
