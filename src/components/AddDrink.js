@@ -73,7 +73,7 @@ const AddDrink = () => {
       <div className="midform">
         <h2 style={{ color: "#f4dbaf" }}>Mix Your Own</h2>
 
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} id="add-form">
           <InputGroup className="txtarea">
             <Form.Control
               type="text"
