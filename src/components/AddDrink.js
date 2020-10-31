@@ -15,18 +15,30 @@ const initDrink = {
 const AddDrink = () => {
   const [drink, setDrink] = useState(initDrink);
 
-  const handleChange = (i, event) => {
-    setDrink({...drink, [event.target.name]: event.target.value});
+  const handleChange = (event) => {
+    console.log(event.target.name)
+    // Checks of the name attributes of the field contains a number. ex: (ingredient0,ingredient1, ingresient2)
+    const ingredientIndex = event.target.name.match(/\d+/g)
+    console.log("ingredientIndex", ingredientIndex)
+
+    if (ingredientIndex == 0 || ingredientIndex) {
+      console.log("is an ingrediente")
+      drink.ingredients[ingredientIndex] = event.target.value
+      console.log("ingredients array", drink.ingredients[ingredientIndex])
+      setDrink({...drink, ingredients: drink.ingredients });
+    } else {
+      setDrink({...drink, [event.target.name]: event.target.value});
+    }
   };
 
   const handleAdd = (event) => {
-    // values.push({ value: null }); 
-    setDrink({...drink, "ingredient": event.target.value});
+    drink.ingredients.push('')
+    setDrink({...drink, ingredients: drink.ingredients });
   };
 
   const handleRemove = (i, event) => {
     // values.splice(i, 1);
-    setDrink({...drink, [event.target.name]: event.target.value});
+    setDrink({...drink, [event.target.name]: event.target.value });
   };
 
   //When user clicks Log in
@@ -71,13 +83,14 @@ const AddDrink = () => {
               type="text"
               name="drinkName"
               placeholder="Drink Name"
-              value={initDrink.drinkName}
+              value={drink.drinkName}
+              onChange={handleChange}
             ></Form.Control>
           </InputGroup>
           <Button
             className="headspace buttons"
             variant="dark"
-            onClick={() => handleAdd()}
+            onClick={(e) => handleAdd(e)}
           >
             Add Ingredient
           </Button>{" "}
@@ -90,8 +103,8 @@ const AddDrink = () => {
                     type="text"
                     name={`ingredient${idx}`}
                     placeholder="Ingredient"
-                    value={ingredient.value || ""}
-                    onChange={(e) => handleChange(idx, e)}
+                    value={drink.ingredients[idx] || ""}
+                    onChange={(e) => handleChange(e)}
                   ></Form.Control>
 
                   <InputGroup.Append>
@@ -112,8 +125,9 @@ const AddDrink = () => {
             className="txtarea headspace"
             name="instructions"
             placeholder="Instructions"
-            value={initDrink.instructions}
+            value={drink.instructions}
             as="textarea"
+            onChange={handleChange}
             rows={3}
           />
           <Button type="submit" className="headspace buttons" variant="dark">
