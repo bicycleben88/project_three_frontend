@@ -68,7 +68,7 @@ const Login = (props) => {
         <Row>
           <Col></Col>
           <Col>
-        <InputGroup className="txtarea midform" onSubmit={handleSubmit}>
+        <InputGroup className="txtarea midform">
             <Form className = "moveit" onSubmit={handleSubmit}>
                 <Form.Control
                     type="text"
