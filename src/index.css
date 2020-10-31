@@ -75,6 +75,31 @@ h2{
   background-color: #2a2428;
 }
 
+#randomButton{
+  color: #2a2428!important;
+  background-color: #f4dbaf !important;
+  font-weight: bold!important;
+  width: 175px;
+  height: 70px;
+  font-size: 30px;
+}
+
+#randomCol{
+  width: 80%;
+}
+
+#drinkName{
+  font-size: 45px;
+  font-weight: 900;
+  text-decoration: underline;
+}
+
+#contents{
+  color: #f4dbaf;
+  font-size: 25px;
+  background-color: #2a2428!important;
+}
+
 /* Responsive when website is 500px and smaller */
 @media screen and (max-width: 500px) {
   *{
