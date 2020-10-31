@@ -88,17 +88,8 @@ h2{
   font-size: 30px;
 }
 
-#randomCol{
-  width: 80%;
-}
-
-#drinkName{
-  font-size: 45px;
-  font-weight: 900;
-  text-decoration: underline;
-}
-
 #contents{
+  padding: 10px;
   color: #f4dbaf;
   font-size: 25px;
   background-color: #2a2428!important;
