@@ -1,4 +1,4 @@
-Welcome to Cocktail Hour. Your go to destination if you're parhed and looking to party. 
+Welcome to Cocktail Hour. Your go to destination if you're parched and looking to party. 
 
 This application lets you sign up/login to create your own drink and save it, search for a drink, or populate a random drink.
 
