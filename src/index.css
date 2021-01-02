@@ -85,6 +85,11 @@ h2{
   background-color: #2a2428;
 }
 
+.about {
+  padding: 10px;
+  color: #f4dbaf;
+}
+
 #randomButton{
   color: #2a2428!important;
   background-color: #f4dbaf !important;
