@@ -51,7 +51,7 @@ function App() {
           <Intro {...rProps}/>
           <Row>
           <Col></Col>
-          <Col>
+          <Col className="central">
           <AddDrink {...rProps}/>
           </Col>
           <Col></Col>
