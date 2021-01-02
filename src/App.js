@@ -4,7 +4,7 @@ import AddDrink from './components/AddDrink';
 import Intro from './components/Intro';
 import Signup from './pages/Signup';
 import Recipe from './pages/Recipe';
-import RandomDrink from './components/Testrandom';
+import About from './pages/About';
 import Update from './components/UpdateDrink'
 import Testapp from './Testapp';
 import Navigation from './components/Navbar';
@@ -64,7 +64,7 @@ function App() {
           <Intro {...rProps}/>
           <Row>
           <Col></Col>
-          <Col>
+          <Col className="central">
           <AddDrink {...rProps}/>
           </Col>
           <Col></Col>
@@ -75,6 +75,8 @@ function App() {
         <Route exact path='/recipe' render={(rProps => <Recipe {...rProps} />)} /> 
         <Route exact path="/login" render={(rProps => <Login {...rProps} />)} />
         <Route exact path="/update" render={(rProps => <Update {...rProps} />)} />
+        <Route exact path="/about" render={(rProps => <About {...rProps} />)} />
+
       </Switch>
       </main>
     </div>

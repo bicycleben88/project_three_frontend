@@ -28,7 +28,8 @@ function Navigation(){
             {/* if there's token in local storage then render log out button */}
             {globalState.token ? logOut : null}
             <Nav.Link className="navlink" href="/recipe">Cocktails</Nav.Link>
-            <Nav.Link className="navlink" href="/pricing">About</Nav.Link>
+            <Nav.Link className="navlink" href="/screwit">Screw It!</Nav.Link>
+            <Nav.Link className="navlink" href="/about">About</Nav.Link>
             </Nav>
         </Navbar>
     )

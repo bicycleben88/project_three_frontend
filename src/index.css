@@ -74,9 +74,20 @@ h2{
   margin-bottom: 0px !important;
 }
 
+.central{
+  background-color: #2a2428;
+  display: flex;
+  justify-content: center;
+}
+
 .midform{
   padding: 10px;
   background-color: #2a2428;
+}
+
+.about {
+  padding: 10px;
+  color: #f4dbaf;
 }
 
 #randomButton{
@@ -91,6 +102,7 @@ h2{
 #add-form {
   padding: 35px;
 }
+
 #contents{
   padding: 10px;
   color: #f4dbaf;
