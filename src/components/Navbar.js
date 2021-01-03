@@ -18,8 +18,10 @@ function Navigation(){
     )
 
     return(
-        <Navbar id="stucktop" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" id="stucktop" bg="dark" variant="dark">
             <Navbar.Brand className="brand" href="/">Cocktail Hour</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
             <Nav.Link className="navlink" href="/screwit">Screw It!</Nav.Link>
             <Nav.Link className="navlink" href="/signup">SignUp</Nav.Link>
@@ -30,6 +32,7 @@ function Navigation(){
             
             <Nav.Link className="navlink" href="/about">About</Nav.Link>
             </Nav>
+            </Navbar.Collapse>
         </Navbar>
     )
 }
