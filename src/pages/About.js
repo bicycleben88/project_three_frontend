@@ -63,8 +63,8 @@ const Login = (props) => {
             </Container>
         </Jumbotron>
         <Row>
-          <Col></Col>
-          <Col className="central about">
+          <Col xs={2} md={4}></Col>
+          <Col className="central about" xs={8} md={4}>
             <p>Welcome to Cocktail Hour! Your go to destination if you're parched and looking to party. <br/> 
             <a href="/signup">signup</a>/<a href="/login">login</a> to create your own drink and save it for later, or feel free to <a href="/screwit">"Screw It!"</a> to generate a random drink.<br/>
             Developed in November 2020 by 
@@ -73,7 +73,7 @@ const Login = (props) => {
             <a href="https://annamcheng.netlify.app/" target="_blank"> Anna Cheng</a>, and
             <a href="https://github.com/ijvitaga" target="_blank"> Ian Vitaga</a>  </p>
         </Col>
-          <Col></Col>
+          <Col xs={2} md={4}></Col>
           </Row>
         </>
     )

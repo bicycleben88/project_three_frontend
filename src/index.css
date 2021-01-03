@@ -28,6 +28,7 @@ h2{
 #stucktop{
   position: fixed;
   width: 100%;
+  top: 0;
   z-index: 3;
   background-color: #2a2428!important;
   box-shadow: 0px 0px 12px black!important;
@@ -147,6 +148,14 @@ h2{
   textarea,
   input {
     min-width: 200px;
+    max-width: 80%;
+  }
+  h1{
+    padding-top: 10%;
+  }
+  .screwImg{
+    max-width: 80%;
+    max-height: 225px;
   }
 }
 /* Responsive when website is 800px and bigger */

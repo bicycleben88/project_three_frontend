@@ -18,7 +18,7 @@ const Testrandom = ({ result, getResults }) => {
                 <div key={drink.idDrink}>
                     <div id="contents">
                     <h1>{drink.strDrink}</h1>
-                    <img src={drink.strDrinkThumb} width="600" height="500"></img>
+                    <img className="screwImg" src={drink.strDrinkThumb} width="600" height="500"></img>
                     <p>{drink.strAlcoholic}</p>
                     <p>{drink.strGlass}</p>
                     <h2>Ingredients</h2>

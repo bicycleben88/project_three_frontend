@@ -48,8 +48,8 @@ const Recipe = (props) => {
       </Jumbotron>
 
       <Row>
-        <Col></Col>
-        <Col>
+        <Col xs={2} md={4}></Col>
+        <Col xs={8} md={4}>
           <div>
             {recipe.map(recipe => ( 
               <div className="recipe midform">
@@ -72,7 +72,7 @@ const Recipe = (props) => {
             
           </div>
         </Col>
-        <Col></Col>
+        <Col xs={2} md={4}></Col>
       </Row>
     </>
   );
