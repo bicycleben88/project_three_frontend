@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-
 import AddDrink from './components/AddDrink';
 import Intro from './components/Intro';
 import Signup from './pages/Signup';
 import Recipe from './pages/Recipe';
 import About from './pages/About';
-import Update from './components/UpdateDrink'
+import Update from './pages/Update'
 import Testapp from './Testapp';
 import Navigation from './components/Navbar';
 import { Route, Switch } from 'react-router-dom';

@@ -4,8 +4,8 @@ import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-import { Link } from 'react-router-dom'
+import UpdateDrink from '../components/UpdateDrink.js';
+
 
 const Recipe = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
@@ -49,28 +49,8 @@ const Recipe = (props) => {
 
       <Row>
         <Col></Col>
-        <Col>
-          <div>
-            {recipe.map(recipe => ( 
-              <div className="recipe midform">
-              <h2>{recipe.name}</h2>
-              <img src={recipe.image} alt={recipe.name}></img>
-  
-              <h3><b>Ingredients</b></h3>
-              <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
-              <p className="ii">{recipe.ingredient}</p>
-  
-              <h3><b>Instructions</b></h3>
-              <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
-              <p className="ii">{recipe.instructions}</p>
-
-              <Link to='/update'><Button className="headspace buttons" variant="dark">Edit</Button>{' '}</Link>
-              <Button className="headspace buttons" variant="dark" onClick={() => handleDelete(recipe._id)}>Delete</Button>{' '}
-              </div>
-            ))}
-            
-            
-          </div>
+        <Col className="central">
+          <UpdateDrink/>
         </Col>
         <Col></Col>
       </Row>

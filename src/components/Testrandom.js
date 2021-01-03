@@ -2,13 +2,10 @@ import React from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from "react-bootstrap/Button";
+
 
 const Testrandom = ({ result, getResults }) => {
-    // const [results, setResults] =
-    // React.useState({});
-    // React.useEffect(() => {
-    //     setResults(drinks);
-    // }, []);
 
     const strDrinks = () => {
         console.log(result.drinks)
@@ -25,6 +22,7 @@ const Testrandom = ({ result, getResults }) => {
                     <p>{drink.strAlcoholic}</p>
                     <p>{drink.strGlass}</p>
                     <h2>Ingredients</h2>
+                    <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
                     <p>{drink.strIngredient1}   {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2}   {drink.strMeasure2}</p>
                     <p>{drink.strIngredient3}   {drink.strMeasure3}</p>
@@ -36,6 +34,7 @@ const Testrandom = ({ result, getResults }) => {
                     <p>{drink.strIngredient9}   {drink.strMeasure9}</p>
                     <p>{drink.strIngredient10}   {drink.strMeasure10}</p>
                     <h2>Instructions</h2>
+                    <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
                     <p>{drink.strInstructions}</p>
                     </div>
                 </div>
@@ -51,17 +50,19 @@ const Testrandom = ({ result, getResults }) => {
         return (
             <div>
                 <Jumbotron>
-                    <h1>Get a Random Drink</h1>
+                    <h1>Random Drink</h1>
+                    <h5 className="introtext"> Select the "Screw It!" button below to generate a ranom drink</h5>
+
                 </Jumbotron>
                 <br/>
-                <button id="randomButton" onClick={getResults}>Screw It!</button>
+                <Button size="lg" className="screw buttons" variant="dark" onClick={getResults}> Screw It! </Button>
                 
                 {result.length != 0 ? strDrinks() : <p>No drink</p>}            
             </div>
         )
     }
 
-    return result ? loaded() : <h1>Loading...</h1>
+    return result ? loaded() : <h1>Mixing...</h1>
 };
 
 export default Testrandom;

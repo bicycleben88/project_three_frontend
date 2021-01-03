@@ -7,6 +7,7 @@ body {
     background-position-y: top;
     background-position-x: left;
     background-image: url("https://res.cloudinary.com/dmxibubc5/image/upload/v1604023469/depositphotos_87719934-stock-illustration-vintage-antique-palette-seamless-art_tyxrwb.jpg");
+    background-attachment: fixed;
     font-family: 'Poiret One', cursive!important;
     font-weight: bold!important;
 
@@ -37,6 +38,14 @@ h2{
   font-family: "Limelight", cursive;
   text-transform: uppercase;
   font-weight: normal!important;
+  transition: all .5s linear;
+  border-radius: 10px;
+  padding: 3px;
+}
+.brand:hover{
+  color: #2a2428!important;
+  background-color: #f4dbaf !important;
+  text-shadow: 0px 0px 5px black!important;
 }
 
 .ii{
@@ -45,6 +54,16 @@ h2{
 
 .navlink, .recipe{
   color: #f4dbaf!important;
+  transition: all .5s linear;
+  border-radius: 10px;
+}
+.navlink:hover{
+  color: #2a2428!important;
+  background-color: #f4dbaf !important;
+}
+
+.recipe{
+  margin: 5% 0% 5% 0%;
 }
 
 .introtext{
@@ -61,6 +80,14 @@ h2{
   color: #2a2428!important;
   background-color: #f4dbaf !important;
   font-weight: bold!important;
+}
+
+.screw{
+  margin-bottom: 10px;
+}
+.screw:hover{
+  color: #f4dbaf!important;
+  background-color: #2a2428 !important;
 }
 
 .headspace{
@@ -108,6 +135,7 @@ h2{
   color: #f4dbaf;
   font-size: 25px;
   background-color: #2a2428!important;
+  border-radius: 10px;
 }
 
 /* Responsive when website is 500px and smaller */

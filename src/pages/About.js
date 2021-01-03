@@ -2,9 +2,6 @@ import React from 'react';
 import {GlobalContext} from '../App';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import '../Signup.css';
@@ -69,10 +66,9 @@ const Login = (props) => {
           <Col></Col>
           <Col className="central about">
             <p>Welcome to Cocktail Hour! Your go to destination if you're parched and looking to party. <br/> 
-            <a href="/"> Search for a drink</a> or <a href="/signup">signup</a>/<a href="/login">login</a> to create your own drink and save it for later.<br/>
-            Additionally, you can <a href="/screwit">"Screw It!"</a> to populate a random drink.<br/>
+            <a href="/signup">signup</a>/<a href="/login">login</a> to create your own drink and save it for later, or feel free to <a href="/screwit">"Screw It!"</a> to generate a random drink.<br/>
             Developed in November 2020 by 
-            <a href="https://portfolio-alpha-orpin.vercel.app/" target="_blank">Carlo Berardelli</a>, 
+            <a href="https://portfolio-alpha-orpin.vercel.app/" target="_blank"> Carlo Berardelli</a>, 
             <a href="https://github.com/bicycleben88" target="_blank"> Ben Higginbotham</a>,  
             <a href="https://annamcheng.netlify.app/" target="_blank"> Anna Cheng</a>, and
             <a href="https://github.com/ijvitaga" target="_blank"> Ian Vitaga</a>  </p>

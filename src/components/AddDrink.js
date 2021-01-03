@@ -3,8 +3,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import {GlobalContext} from '../App';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 //create empty user object
 const initDrink = {
