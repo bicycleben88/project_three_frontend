@@ -3,8 +3,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import {GlobalContext} from '../App';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 //create empty user object
 const initDrink = {
@@ -13,7 +11,7 @@ const initDrink = {
   instructions: "",
 };
 
-const AddDrink = (props) => {
+const UpdateDrink = (props) => {
   //Deconstruct globalState and setGlobalState and pass into useContext
   const {globalState, setGlobalState} = React.useContext(GlobalContext);
   const {url, token} = globalState;
@@ -70,7 +68,7 @@ const AddDrink = (props) => {
   return (
     <div>
       <div className="midform">
-        <h2 style={{ color: "#f4dbaf" }}>Mix Your Own</h2>
+        <h2 style={{ color: "#f4dbaf" }}>Remix Drink</h2>
 
         <Form onSubmit={handleSubmit} id="add-form">
           <InputGroup className="txtarea">
@@ -134,4 +132,4 @@ const AddDrink = (props) => {
   );
 };
 
-export default AddDrink;
+export default UpdateDrink;

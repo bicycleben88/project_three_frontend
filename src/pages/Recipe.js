@@ -98,8 +98,8 @@ const Recipe = (props) => {
       </Jumbotron>
 
       <Row>
-        <Col></Col>
-        <Col>
+        <Col xs={2} md={4}></Col>
+        <Col xs={8} md={4}>
           <div>
             {recipe.map(recipe => ( 
               <div className="recipe midform">
@@ -107,9 +107,11 @@ const Recipe = (props) => {
               <img src={recipe.image} alt={recipe.name}></img>
   
               <h3><b>Ingredients</b></h3>
+              <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
               <p className="ii">{recipe.ingredient}</p>
   
               <h3><b>Instructions</b></h3>
+              <hr style={{border:" 1px solid #f4dbaf", margin:"0% 20% 0% 20%"}}/>
               <p className="ii">{recipe.instructions}</p>
 
               <Button className="headspace buttons" variant="dark" onClick={() => handleDelete(recipe._id)}>Delete</Button>{' '}
@@ -142,7 +144,6 @@ const Recipe = (props) => {
                     value={recipe.ingredients[idx] || ""}
                     onChange={(e) => handleChange(e)}
                   ></Form.Control>
-
                   <InputGroup.Append>
                     <Button
                       variant="dark"
@@ -170,23 +171,18 @@ const Recipe = (props) => {
             Submit Creation
           </Button>{" "}
         </Form>
-      
               <hr style={{border:" 1px solid #f4dbaf"}}/>
               </div>
             ))}
-            
-            
           </div>
         </Col>
-        <Col></Col>
+        <Col xs={2} md={4}></Col>
       </Row>
     </>
   );
 }
 
 return recipe.length > 0 ? loaded() : <p>mixing...</p>
-
-
 };
 
 export default Recipe;
