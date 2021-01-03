@@ -1,3 +1,49 @@
+Welcome to Cocktail Hour. Your go to destination if you're parched and looking to party. 
+
+This application lets you sign up/login to create your own drink and save it, search for a drink, or populate a random drink.
+
+Contributers:
+
+Ben Higginbotham
+Anna Cheng
+Carlo Berardelli
+Ian Vitaga
+
+Roles:
+
+Release Manager - Ben
+Product Manager - Carlo
+Lead front-end dev - Ian
+Lead back-end dev - Anna
+
+User Story:
+We wanted to make an app that would help people with their alcoholic adventures.
+User will be able to:
+1. Create their own username and login
+2. Create a drink recipe and save it
+3. View, edit, and delete a saved drink recipe
+4. Search a random drink using a button
+
+Technologies used:
+
+1. Bootstrap
+2. Mongoose, Express, React, Node js.
+3. API - https://www.thecocktaildb.com/api.php
+4. Postman.com
+5. Heroku
+6. Netlify
+
+Blockers:
+
+1. Random button
+    -The API was difficult to incorporate due to the API using an array as an object
+2. AUTH signup/login
+3. Edit route
+4. Getting drink ingredients in to an array
+
+Wireframes:
+![Getting Started](./wireframecocktailhour.png)
+
 Frontend Repo URL: https://github.com/bicycleben88/project_three_frontend.git
 
 Backend Repo URL: https://github.com/bicycleben88/project_three_backend.git

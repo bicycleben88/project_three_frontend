@@ -18,6 +18,8 @@ import Col from 'react-bootstrap/Col'
 export const GlobalContext = React.createContext(null)
 
 function App() {
+  
+  // --------------- Global state for API url and user Token ------------------------
   //Create global state for all components
   const [globalState, setGlobalState] = React.useState({
     //API URL
@@ -25,9 +27,8 @@ function App() {
     //JWT token
     token: null
   });
-
-   //load initial state
-   React.useEffect(() => {
+  //load initial state
+  React.useEffect(() => {
     //get token from local storage
     const token = JSON.parse(window.localStorage.getItem("token"));
     console.log(token);
@@ -37,8 +38,21 @@ function App() {
       setGlobalState({...globalState, token: token.token})
     }
   }, []);
+  
+  // ----------------- State for drink recipes -------------------------------------
+  //define state and setState for drinks
+  const [drinks, setDrinks] = React.useState(null)
+  const getDrinks = () => {
+    fetch(`${globalState.url}/recipe`)
+    .then(response => response.json())
+    .then((data) => {
+      setDrinks(data)
+    });
+  }
+  React.useEffect(() => {
+    getDrinks();
+  }, []);
 
- 
   return (
     <GlobalContext.Provider value={{globalState, setGlobalState}}>
     <div className="App">
