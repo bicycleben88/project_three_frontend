@@ -2,6 +2,8 @@ Welcome to Cocktail Hour. Your go to destination if you're parched and looking t
 
 This application lets you sign up/login to create your own drink and save it, search for a drink, or populate a random drink.
 
+## [Live Site](https://stoic-jepsen-f0ca22.netlify.app/)
+
 Contributers:
 
 Ben Higginbotham
